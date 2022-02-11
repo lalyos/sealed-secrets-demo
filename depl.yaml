@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: friday
+  name: friday
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: friday
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: friday
+    spec:
+      containers:
+      - image: lalyos/12factor
+        name: friday
+        envFrom:
+          - secretRef:
+              name: friday
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
