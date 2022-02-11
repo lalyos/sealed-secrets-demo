@@ -4,7 +4,7 @@ metadata:
   name: friday
 spec:
   rules:
-  -   host: friday.user0.k8z.eu
+  -   host: friday.$NS.k8z.eu
       http:
         paths:
           - path: /
